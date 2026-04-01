@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": [
+    "sanity/typescript",
+    "sanity/react",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier", "react", "react/jsx-runtime"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  },
+  "ignorePatterns": ["dist/**"]
+}

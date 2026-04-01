@@ -1,0 +1,92 @@
+{
+  "name": "sanity-plugin-document-manager",
+  "version": "1.0.0",
+  "description": "A Sanity Studio plugin to browse, search, filter, and bulk-manage documents across datasets — all from a single tool pane.",
+  "keywords": [
+    "sanity",
+    "sanity-plugin",
+    "document-manager",
+    "bulk-delete",
+    "dataset",
+    "content management",
+    "document browser",
+    "studio tool"
+  ],
+  "license": "MIT",
+  "author": "Desai Hardik <dhardik1430@gmail.com>",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "watch": "tsup --watch",
+    "link-watch": "plugin-kit link-watch",
+    "format": "prettier --write --cache --ignore-unknown .",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "sanityPlugin": {
+    "linkWatch": {
+      "command": "pnpm run watch"
+    },
+    "verifyPackage": {
+      "pkg-utils": false,
+      "scripts": false,
+      "tsconfig": false,
+      "sanityV2Json": false,
+      "eslintImports": false
+    }
+  },
+  "dependencies": {
+    "@sanity/client": "^7.20.0",
+    "@sanity/incompatible-plugin": "^1.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hardik-143/sanity-plugin-document-manager.git"
+  },
+  "devDependencies": {
+    "@sanity/icons": "^3.7.4",
+    "@sanity/plugin-kit": "^4.0.20",
+    "@types/node": "^25.5.0",
+    "@types/react": "^19.1.13",
+    "@typescript-eslint/eslint-plugin": "^8.44.0",
+    "@typescript-eslint/parser": "^8.44.0",
+    "eslint": "^8.57.1",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-config-sanity": "^7.1.4",
+    "eslint-plugin-prettier": "^5.5.4",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-packagejson": "^2.5.19",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "sanity": "^5.0.0",
+    "styled-components": "^6.1.19",
+    "tsup": "^8.0.0",
+    "typescript": "^5.9.2"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "sanity": "^3 || ^4 || ^5",
+    "styled-components": "^6.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
